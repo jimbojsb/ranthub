@@ -86,8 +86,8 @@ class ApplicationContext implements ApplicationContextInterface
                     $mongo = new Mongo();
                 }
                 return $mongo->ranthub;
-            },
-        ];
+            }
+        );
 
         foreach ($services as $name => $service) {
             $serviceLocator->set($name, $service);

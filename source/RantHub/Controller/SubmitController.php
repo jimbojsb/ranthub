@@ -4,7 +4,6 @@ namespace RantHub\Controller;
 
 use MiniP\ServiceLocator;
 use RantHub\View;
-use RantHub\Form;
 
 class SubmitController
 {
@@ -21,8 +20,6 @@ class SubmitController
     
     public function indexAction()
     {
-        $form = new Form\SubmitForm;
-
-        return new View\ViewScript('submit/submit.phtml', array('form' => $form));
+        return new View\ViewScript('submit/submit.phtml');
     }
 }
