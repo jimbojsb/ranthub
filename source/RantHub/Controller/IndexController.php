@@ -21,6 +21,9 @@ class IndexController
     
     public function indexAction()
     {
-        return new View\ViewScript('index/index.phtml', array('messages' => 'hello, from the IndexController'));
+        $mongo = $this->serviceLocator->get('MongoDb');
+        $rants = $mongo->rants->find()->limit(10);
+
+        return new View\ViewScript('index/index.phtml', array('rants' => $rants));
     }
 }

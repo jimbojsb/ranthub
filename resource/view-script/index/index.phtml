@@ -1,8 +1,19 @@
 <?php include 'common/header.phtml'; ?>
 
-<h1>H1</h1>
-<section>
-    Index <?php echo $messages; ?>
-</section>
+<h1>Latest Rants:</h1>
+<?foreach ($rants as $rant) {?>
+    <div class="rant">
+        <h4></h4>
+        <p class="rant-url"><a target="_blank" href="<?=$rant["url"]?>"><?=$rant["url"]?></a></p>
+        <pre>
+            <?foreach ($rant["lines"] as $line){?>
+                <?=$line?>
+            <?}?>
+        </pre>
+        <p class="rant-text">
+            <?=$rant["rant"]?>
+        </p>
+    </div>
+<?}?>
 
 <?php include 'common/footer.phtml'; ?>

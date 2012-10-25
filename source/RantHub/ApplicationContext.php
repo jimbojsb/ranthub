@@ -84,12 +84,12 @@ class ApplicationContext implements ApplicationContextInterface
 
             'MongoDb' => function () {
                 if (isset($_ENV['OPENSHIFT_GEAR_NAME'])) {
-                    $mongo = new Mongo("mongodb://admin:T7hjJ-Jze3N3@127.7.75.129:27017");
+                    $mongo = new \Mongo("mongodb://admin:T7hjJ-Jze3N3@127.7.75.129:27017");
                 } else {
-                    $mongo = new Mongo();
+                    $mongo = new \Mongo();
                 }
                 return $mongo->ranthub;
-            },
+            }
         );
 
         foreach ($services as $name => $service) {
