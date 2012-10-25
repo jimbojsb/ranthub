@@ -67,7 +67,7 @@ abstract class AbstractAPI
         // set context and get contents
         $context = stream_context_create(array(
             'http' => $httpOptions,
-            'ssl' => array('verify_peer' => true)
+//            'ssl' => array('verify_peer' => true)
         ));
 
         // reset last request data
