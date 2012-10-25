@@ -24,7 +24,7 @@ class UserAPI extends AbstractAPI
      */
     public function getAuthenticatedUser()
     {
-        if (!$this->accessToken) {
+        if (!$this->authentication) {
             throw new \RuntimeException('This API requires an access_token');
         }
 

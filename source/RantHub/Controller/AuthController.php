@@ -76,8 +76,6 @@ class AuthController
         $client = new UserAPI($response['access_token']);
         $_SESSION['user'] = $client->getAuthenticatedUser();
 
-        var_dump($_SESSION);
-
         header('Location: /');
         exit();
     }
