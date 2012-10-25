@@ -1,12 +1,11 @@
 <?php
 
-include 'Zend_Form-2.0.3.phar';
-
 $vendor_packages = array(
     'MiniP' => __DIR__ . '/MiniP/source/',
     'P\Dispatcher' => __DIR__ . '/P_Dispatcher/source/',
     'P\Router' => __DIR__ . '/P_Router/source/',
     'P\ServiceLocator' => __DIR__ . '/P_ServiceLocator/source/',
+    'GitHubAPIv3' => __DIR__ . '/GitHubAPIv3/source'
 );
 
 spl_autoload_register(function ($class) use ($vendor_packages) {

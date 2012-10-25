@@ -76,7 +76,10 @@ class ApplicationContext implements ApplicationContextInterface
         $services = array(
 
             'errorhandler' => function () {
-                return new ErrorHandler($this);
+                return function () {
+                    echo '<pre>';
+                    var_dump(func_get_args());
+                };
             },
 
             'MongoDb' => function () {
@@ -87,7 +90,7 @@ class ApplicationContext implements ApplicationContextInterface
                 }
                 return $mongo->ranthub;
             },
-        ];
+        );
 
         foreach ($services as $name => $service) {
             $serviceLocator->set($name, $service);
@@ -106,8 +109,20 @@ class ApplicationContext implements ApplicationContextInterface
             ),
             'submitform' => array(
                 '/submit',
-                '\RantHub\Controller\SubmitController->indexAction'
+                'RantHub\Controller\SubmitController->indexAction'
+            ),
+            'auth:login' => array(
+                '/auth/login',
+                'RantHub\Controller\AuthController->loginAction'
+            ),
+            'auth:complete' => array(
+                '/auth/complete',
+                'RantHub\Controller\AuthController->completeAction'
             )
+            // 'auth:logout' => array(
+            //     '/submit',
+            //     '\RantHub\Controller\SubmitController->indexAction'
+            // )
         );
         // setup app routes
         $routeStack = $router->getRouteStack();

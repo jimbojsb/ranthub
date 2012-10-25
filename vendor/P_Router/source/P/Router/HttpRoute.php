@@ -46,6 +46,10 @@ class HttpRoute implements RouteInterface
         // replace url suffixing, if present
         $matchRegex = preg_replace('#/\*$#', '(?P<parameters>/[\w-_/]*)*', $matchRegex);
 
+        if (strpos($reqUri, '?') !== false) {
+            $reqUri = substr($reqUri, 0, strpos($reqUri, '?'));
+        }
+
         if (!preg_match_all('|' . $matchRegex . '$|', $reqUri, $matches)) {
             return false;
         }
