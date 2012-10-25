@@ -118,33 +118,11 @@ class ApplicationContext implements ApplicationContextInterface
                 '/',
                 'RantHub\Controller\IndexController->indexAction'
             ),
-
-            // user centric routes
-//            'user:login' => [
-//                '/login',
-//                'PPMSite\Controller\UserController->loginAction'
-//            ],
-//            'user:logout' => [
-//                '/logout',
-//                'PPMSite\Controller\UserController->logoutAction'
-//            ],
-//            'user:profile' => [
-//                '/profile',
-//                'PPMSite\Controller\UserController->profileAction'
-//            ],
-//
-//            // package centric routes
-//            'package:get' => [
-//                '/package/:packagename',
-//                'PPMSite\Controller\PackageController->getAction'
-//            ],
-//
-//            'package:user' => [
-//                '/package/:username/:packagename',
-//                'PPMSite\Controller\PackageController->userRestAction'
-//            ]
+            'submitform' => array(
+                '/submit',
+                '\RantHub\Controller\SubmitController->indexAction'
+            )
         );
-
         // setup app routes
         $routeStack = $router->getRouteStack();
         foreach ($routes as $name => $specification) {
