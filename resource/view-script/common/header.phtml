@@ -2,30 +2,24 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <title></title>
-        <link rel="stylesheet" href="/asset/styles.css" type="text/css" />
+        <title>Ranthub!</title>
+        <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css" />
+        <link rel="stylesheet" href="/css/styles.css" type="text/css" />
+
     </head>
     <body>
-        <header>
-            
-        </header>
-
+    <div class="container">
+        <div class="navbar">
+            <div class="navbar-inner">
+                <a class="brand" href="/">Ranthub!</a>
+                <ul class="nav">
+                    <li <?=$_SERVER['REQUEST_URI'] == '/' ? 'class="active"' : ''?>><a href="/">Home</a></li>
+                    <li <?=$_SERVER['REQUEST_URI'] == '/submit' ? 'class="active"' : ''?>><a href="/submit">Submit a new rant</a></li>
+                </ul>
+            </div>
+        </div>
     <?php if (isset($flash_message)): ?>
         <?= $flash_message; ?>
         <br />
         <hr />
-    <?php endif; ?>
-
-    <hr />
-
-    <?php if (isset($user)): ?>
-
-        Logged In As: <?= $user->getName(); ?>
-        | <a href="/logout">Logout</a>
-        <hr />
-
-    <?php elseif ($_SERVER['REQUEST_URI'] != '/login'): ?>
-
-        <a href="/login">Login</a>
-
     <?php endif; ?>
