@@ -1,0 +1,13 @@
+<?= $this->render('common/header.phtml'); ?>
+
+<form action="/signup" method="POST">
+<?php
+$htmlForm = new 
+foreach ($htmlForm as $htmlElement) {
+    echo $htmlElement . '<br />';
+}
+?>
+<input type="submit" />
+</form>
+
+<?= $this->render('common/footer.phtml'); ?>

@@ -1,0 +1,22 @@
+<?php include 'common/header.phtml'; ?>
+
+<h1>Error</h1>
+
+<?php if ($showDebugInformation && $exception instanceof Exception): ?>
+    Debug: <br />
+
+    <?php
+
+        if (extension_loaded('xdebug')):
+            echo '<table>' . $exception->xdebug_message . '</table>';
+        else:
+            echo '<pre>';
+            var_dump($exception);
+            echo '<pre>';
+        endif;
+
+    ?>
+<?php endif; ?>
+
+
+<?php include 'common/footer.phtml'; ?>

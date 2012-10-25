@@ -1,0 +1,18 @@
+<?php include 'common/header.phtml'; ?>
+
+<form action="/login" method="POST">
+
+<?php if (isset($_SESSION['flash']['form_error'])): ?>
+Error: <?= $_SESSION['flash']['form_error']; ?> <br />
+<?php endif; ?>
+
+<?php
+$htmlForm = 
+foreach ($htmlForm as $htmlElement) {
+    echo $htmlElement . '<br />';
+}
+?>
+<input type="submit" />
+</form>
+
+<?php include 'common/footer.phtml'; ?>
