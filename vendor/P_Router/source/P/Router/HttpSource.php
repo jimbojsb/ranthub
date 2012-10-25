@@ -14,11 +14,11 @@ class HttpSource implements SourceInterface
 
     public function getCommand()
     {
-        return [
+        return array(
             $_SERVER['REQUEST_METHOD'],
             $_SERVER['REQUEST_URI'],
             $_SERVER['SERVER_PROTOCOL']
-        ];
+        );
     }
 
     public function getContent()

@@ -73,7 +73,7 @@ class ApplicationContext implements ApplicationContextInterface
         $configuration = include $this->path . '/resource/configuration/application.php';
         $serviceLocator->set('configuration', $configuration[$this->mode]);
 
-        $services = [
+        $services = array(
 
             'errorhandler' => function () {
                 return new ErrorHandler($this);
@@ -101,7 +101,7 @@ class ApplicationContext implements ApplicationContextInterface
 //                );
 //            },
 
-        ];
+        );
 
         foreach ($services as $name => $service) {
             $serviceLocator->set($name, $service);

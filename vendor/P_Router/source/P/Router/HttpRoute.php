@@ -14,7 +14,7 @@ class HttpRoute implements RouteInterface
     /**
      * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html
      */
-    protected $validHttpMethods = ['OPTIONS', 'GET', 'HEAD', 'PUT', 'POST', 'DELETE', 'TRACE', 'CONNECT'];
+    protected $validHttpMethods = array('OPTIONS', 'GET', 'HEAD', 'PUT', 'POST', 'DELETE', 'TRACE', 'CONNECT');
 
     protected $specificationMethods = null;
     protected $specificationUri = null;
