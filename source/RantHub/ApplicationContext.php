@@ -79,29 +79,15 @@ class ApplicationContext implements ApplicationContextInterface
                 return new ErrorHandler($this);
             },
 
-//            'MongoDb' => function () {
-//                return (new \Mongo)->ppmphp;
-//            },
-
-//            'UserRepository' => function () {
-//                return new Model\UserRepository(
-//                    $this->get('MongoDb')->user
-//                );
-//            },
-
-//            'PackageRepository' => function () {
-//                return new Model\PackageRepository(
-//                    $this->get('MongoDb')->package
-//                );
-//            },
-//
-//            'AuthenticationService' => function () {
-//                return new Model\AuthenticationService(
-//                    $this->get('UserRepository')
-//                );
-//            },
-
-        );
+            'MongoDb' => function () {
+                if (isset($_ENV['OPENSHIFT_GEAR_NAME'])) {
+                    $mongo = new Mongo("mongodb://admin:T7hjJ-Jze3N3@127.7.75.129:27017");
+                } else {
+                    $mongo = new Mongo();
+                }
+                return $mongo->ranthub;
+            },
+        ];
 
         foreach ($services as $name => $service) {
             $serviceLocator->set($name, $service);

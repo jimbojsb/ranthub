@@ -3,6 +3,7 @@
 namespace RantHub\Controller;
 
 use MiniP\ServiceLocator;
+use RantHub\Form;
 use RantHub\View;
 
 class IndexController

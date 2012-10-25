@@ -1,5 +1,7 @@
 <?php
 
+include 'Zend_Form-2.0.3.phar';
+
 $vendor_packages = array(
     'MiniP' => __DIR__ . '/MiniP/source/',
     'P\Dispatcher' => __DIR__ . '/P_Dispatcher/source/',
