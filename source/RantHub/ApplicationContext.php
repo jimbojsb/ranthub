@@ -47,10 +47,10 @@ class ApplicationContext implements ApplicationContextInterface
         $config = $this->application->getServiceLocator()->get('configuration');
 
         // setup view script handling
-        $application->dispatcher->registerReturnHandlers([
+        $application->dispatcher->registerReturnHandlers(array(
             $viewScriptHandler = new View\ViewScriptHandler($config['viewscript.path']),
             new Controller\Helper\RedirectHandler()
-        ]);
+        ));
 
         // setup php session
         session_cache_limiter(false);
